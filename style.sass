@@ -1,0 +1,74 @@
+
+
+$app-width: 500px
+$app-height: $app-width
+$app-bg: unquote('#00000014')
+
+$nav-width: 72%
+$nav-height: 32px
+
+$body-bg: #fff
+
+@mixin size($width-value, $height-value)
+    width: $width-value
+    height: $height-value
+
+@mixin flex($justify-content-value, $align-items-value)
+    display: flex
+    justify-content: $justify-content-value
+    align-items: $align-items-value
+
+// --------------------------------------------------------
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext")
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    border: 0
+
+body
+    @include size(100vw, 100vh)
+    @include flex(center, center)
+    background: $body-bg
+    padding: 0
+    margin: 0
+    border: 0
+    font: 100 16px Roboto
+
+#app
+    @include size($app-width, $app-height)
+    @include flex(space-between, center)
+    flex-direction: column
+    padding: $app-height/12 $app-width/12
+    box-shadow: 0 0 64px $app-bg
+    border-radius: 8px
+
+    > *:not(:first-child)
+        display: none
+
+    h1
+        font-size: 2em
+        font-weight: inherit
+        margin-bottom: $app-height/24
+        text-align: center
+
+    p
+        font-weight: 300
+        line-height: 1.5
+
+    
+    #nav
+        @include size($nav-width, $nav-height)
+        display: flex
+
+        button
+            width: 40%
+
+            &:first-child
+                visibility: hidden
+
+        div
+            @include flex(center, center)
+            width: 20%

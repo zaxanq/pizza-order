@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: 100 16px Roboto;
+}
+
+#app {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 41.6666666667px 41.6666666667px;
+  box-shadow: 0 0 64px #00000014;
+  border-radius: 8px;
+}
+#app > *:not(:first-child) {
+  display: none;
+}
+#app h1 {
+  font-size: 2em;
+  font-weight: inherit;
+  margin-bottom: 20.8333333333px;
+  text-align: center;
+}
+#app p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+#app #nav {
+  width: 72%;
+  height: 32px;
+  display: flex;
+}
+#app #nav button {
+  width: 40%;
+}
+#app #nav button:first-child {
+  visibility: hidden;
+}
+#app #nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+/*# sourceMappingURL=style.css.map */
