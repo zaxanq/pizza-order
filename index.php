@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="app">
+      <div id="overlay"></div>
       <section class="content">
         <h1>Zamów pizzę</h1>
         <p>Witaj w kreatorze pizzy.<br>W kolejnych etapach będziesz miał do wyboru najważniejsze elementy pizzy. W każdym momencie możliwy jest powrót do poprzedniego elementu. Poniższe przyciski służą do nawigacji. Aby kontynuować wciśnij przycisk "Dalej".</p>
@@ -32,7 +33,7 @@
       </section>
 
       <section class="content">
-        <h1>Szczegóły Twoje zamówienia</h1>
+        <h1>Szczegóły zamówienia</h1>
         <p>--szczegóły zamówienia-- --szczegóły zamówienia-- --szczegóły zamówienia-- </p>
       </section>
 

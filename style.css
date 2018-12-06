@@ -30,14 +30,46 @@ body {
   box-shadow: 0 0 64px #00000014;
   border-radius: 8px;
 }
-#app > *:not(:first-child) {
+#app #overlay {
+  position: absolute;
+  transition: 0.5s linear;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 380px;
+  z-index: -1;
+}
+#app > *:not(:nth-child(2)) {
   display: none;
 }
-#app h1 {
+#app .content:nth-child(2) > h1 {
+  background-image: url(img/icon-01.svg);
+}
+#app .content:nth-child(3) > h1 {
+  background-image: url(img/icon-02.svg);
+}
+#app .content:nth-child(4) > h1 {
+  background-image: url(img/icon-03.svg);
+}
+#app .content:nth-child(5) > h1 {
+  background-image: url(img/icon-04.svg);
+}
+#app .content:nth-child(6) > h1 {
+  background-image: url(img/icon-05.svg);
+}
+#app > * > h1 {
+  width: fit-content;
   font-size: 2em;
   font-weight: inherit;
-  margin-bottom: 20.8333333333px;
+  margin: 0 auto 20.8333333333px;
   text-align: center;
+}
+#app > .content > h1 {
+  padding-left: 50px;
+  background-size: 36px;
+  background-position: left center;
+  background-repeat: no-repeat;
 }
 #app p {
   font-weight: 300;

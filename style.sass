@@ -45,14 +45,39 @@ body
     box-shadow: 0 0 64px $app-bg
     border-radius: 8px
 
-    > *:not(:first-child)
+    #overlay
+        position: absolute
+        transition: .5s linear
+        display: flex !important
+        justify-content: center
+        align-items: center
+        width: 500px
+        height: 380px
+        z-index: -1
+
+    > *:not(:nth-child(2))
         display: none
 
-    h1
-        font-size: 2em
-        font-weight: inherit
-        margin-bottom: $app-height/24
-        text-align: center
+
+    @for $n from 2 through 6
+        .content
+            &:nth-child(#{$n}) > h1
+                background-image: url(img/icon-0#{$n - 1}.svg)
+
+    > *
+        > h1
+            width: fit-content
+            font-size: 2em
+            font-weight: inherit
+            margin: 0 auto $app-height/24
+            text-align: center
+
+    > .content
+        > h1
+            padding-left: 50px
+            background-size: 36px
+            background-position: left center
+            background-repeat: no-repeat
 
     p
         font-weight: 300
