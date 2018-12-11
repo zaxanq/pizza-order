@@ -71,9 +71,54 @@ body {
   background-position: left center;
   background-repeat: no-repeat;
 }
-#app p {
+#app p,
+#app form,
+#app input {
   font-weight: 300;
   line-height: 1.5;
+}
+#app select {
+  display: block;
+  margin: auto;
+  width: 72%;
+  padding: 12px;
+  border: 1px solid #cacaca;
+}
+#app fieldset > input[type=radio] {
+  display: none;
+}
+#app fieldset > label {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+#app fieldset > input[type=radio] + label span {
+  display: inline-block;
+  width: 36px;
+  height: 16px;
+  vertical-align: middle;
+  background-color: #cacaca;
+  border-radius: 8px;
+  position: relative;
+  margin-right: 8px;
+}
+#app fieldset > input[type=radio] + label span::before {
+  left: 2px;
+}
+#app fieldset > input[type=radio]:checked + label span::before {
+  left: 22px;
+  transition: 0.5s;
+}
+#app fieldset > input[type=radio] + label span::before,
+#app fieldset > input[type=radio]:checked + label span::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  background: #fff;
+  border-radius: 6px;
 }
 #app #nav {
   width: 72%;

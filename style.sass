@@ -7,7 +7,9 @@ $app-bg: unquote('#00000014')
 $nav-width: 72%
 $nav-height: 32px
 
-$body-bg: #fff
+$color-very-light: #fff
+$color-medium-light: #e5e5e5
+$color-low-light: #cacaca
 
 @mixin size($width-value, $height-value)
     width: $width-value
@@ -31,7 +33,7 @@ $body-bg: #fff
 body
     @include size(100vw, 100vh)
     @include flex(center, center)
-    background: $body-bg
+    background: $color-very-light
     padding: 0
     margin: 0
     border: 0
@@ -79,10 +81,55 @@ body
             background-position: left center
             background-repeat: no-repeat
 
-    p
+    p,
+    form,
+    input
         font-weight: 300
         line-height: 1.5
 
+    select
+        display: block
+        margin: auto
+        width: 72%
+        padding: 12px
+        border: 1px solid $color-low-light
+
+    fieldset
+        > input[type="radio"]
+            display: none
+
+        > label
+            display: flex
+            align-items: center
+            padding: 8px
+
+        > input[type="radio"] + label span
+            display: inline-block
+            @include size(36px, 16px)
+            vertical-align: middle
+            background-color: $color-low-light
+            border-radius: 8px
+            position: relative
+            margin-right: 8px
+
+            &::before
+                left: 2px
+
+        > input[type="radio"]:checked + label span
+            &::before
+                left: 22px
+                transition: .5s
+
+        > input[type="radio"] + label span,
+        > input[type="radio"]:checked + label span
+            &::before
+                content: ''
+                display: block
+                @include size(12px, 12px)
+                position: absolute
+                top: 2px
+                background: $color-very-light
+                border-radius: 6px
     
     #nav
         @include size($nav-width, $nav-height)

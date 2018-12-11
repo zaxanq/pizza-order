@@ -1,5 +1,7 @@
 "use strict";
 
+import setCookie from "./setCookie.js";
+
 let page = 1;
 let max = 5;
 
@@ -9,6 +11,16 @@ $(document).ready(function() {
     $("#overlay")
       .css("background", "white")
       .css("z-index", 1);
+
+    if (page === 2)
+      setCookie.add($("select")[0].name, $("option:selected")[0].value);
+    if (page === 3)
+      setCookie.add($("input:checked")[0].name, $("input:checked")[0].value);
+    if (page === 4)
+      setCookie.add($("select")[0].name, $("option:selected")[0].value);
+    if (page === 5)
+      setCookie.add($("select")[0].name, $("option:selected")[0].value);
+
     let that = this;
     setTimeout(function() {
       if (page === 6 || (page === 1 && that["id"] === "nav-back")) {

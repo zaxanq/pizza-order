@@ -7,7 +7,8 @@
     <link rel="Stylesheet" type="text/css" href="style.css">
     <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
     <title>Pizza order</title>
-    <script src="js/view.js" type="text/javascript"></script>
+    <script type="module" src="js/view.js" type="text/javascript"></script>
+    <script type="module" src="js/setCookie.js" type="text/javascript"></script>
 </head>
 <body>
   <div id="app">
@@ -19,12 +20,23 @@
 
       <section class="content">
         <h1>Wybierz rozmiar</h1>
-        <p>--wybór rozmiaru-- --wybór rozmiaru-- --wybór rozmiaru-- </p>
+        <select name="size" required>
+          <option value="">Wybierz rozmiar z listy...</option>
+          <option value="xs">Mini 18cm</option>
+          <option value="s">Mała 24cm</option>
+          <option value="m">Średnia 28cm</option>
+          <option value="l">Duża 34cm</option>
+          <option value="xl">XL 40cm</option>
+          <option value="xxl">Gigant 52cm</option>
+        </select>
       </section>
 
       <section class="content">
         <h1>Wybierz ciasto</h1>
-        <p>--wybór ciasta-- --wybór ciasta-- --wybór ciasta-- </p>
+        <fieldset>
+          <input id="pan1" type="radio" name="pan" value="standard"><label for="pan1"><span></span>Standardowe</label>
+          <input id="pan2" type="radio" name="pan" value="american"><label for="pan2"><span></span>American Pan</label>
+          <input id="pan3" type="radio" name="pan" value="thin"><label for="pan3"><span></span>Cienkie</label>
       </section>
 
       <section class="content">
@@ -32,10 +44,12 @@
         <p>--wybór składników-- --wybór składników-- --wybór składników-- </p>
       </section>
 
+<form>
       <section class="content">
         <h1>Szczegóły zamówienia</h1>
         <p>--szczegóły zamówienia-- --szczegóły zamówienia-- --szczegóły zamówienia-- </p>
       </section>
+</form>
 
       <section id="order-finish">
         <h1>Gotowe!</h1>
@@ -47,6 +61,6 @@
         <div id="nav-pagecounter"></div>
         <button id="nav-next">Dalej</button>
       </section>
-  </div>   
+  </div>
 </body>
 </html>
